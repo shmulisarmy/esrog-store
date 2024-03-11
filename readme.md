@@ -1,8 +1,9 @@
-# esrog_practice
+# esrog_store
 Quick start script
 
 ```bash
-git clone https://github.com/shmulisarmy/esrog_practice.git
+git clone https://github.com/shmulisarmy/esrog_store.git
+cd esrog_practice
 python3 manage.py makemigrations 
 python3 manage.py migrate 
 python3 manage.py runserver 
