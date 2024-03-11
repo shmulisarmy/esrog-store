@@ -2,7 +2,7 @@
 Quick start script
 
 ```bash
-git clone https://github.com/shmulisarmy/esrog_store.git
+git clone https://github.com/shmulisarmy/esrog-store.git
 cd esrog_practice
 python3 manage.py makemigrations 
 python3 manage.py migrate 
