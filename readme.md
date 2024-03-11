@@ -4,8 +4,7 @@ Quick start script
 ```bash
 git clone https://github.com/shmulisarmy/esrog-store.git
 cd esrog-store
-python3 manage.py makemigrations 
-python3 manage.py migrate 
+pip install -r requirements.txt
 python3 manage.py runserver 
 ```
 
