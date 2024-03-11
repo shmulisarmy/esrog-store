@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(186, 182, 182);
+    background-color: purple;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    color: blue;
+}
+
+nav p{
+    cursor: pointer;
+}
+
+main{
+    margin: 15%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Using repeat() for shorthand */
+    grid-gap: 10px;
+}
+@media screen and (max-width: 700px) {
+    main{
+        grid-template-columns: repeat(2, 1fr); /* Using repeat() for shorthand */
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    main{
+        grid-template-columns: repeat(1, 1fr); /* Using repeat() for shorthand */
+    }
+    
+}
+.esrog{
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px ;
+    padding: 10%;
+    font-size: xx-small;
+    background: linear-gradient(90deg, rgba(247, 183, 63, 0.921), rgba(121, 207, 121, 0.457));
+
+}
+.esrog img:hover{
+    transform: scale(1.2);
+    background-color: white;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.esrog img{
+    border-radius: 10px;
+    transition: 2s;
+    width: 100%;
+    height: 60%;
+}
+.text{
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    transition: 1s;
+}
+
+.text:hover{
+    opacity: 1;
+}
