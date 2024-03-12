@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from ..models import Esrog
+from ..db_management.models import Esrog
 
 def main(request):
     # Filter Esrog objects where the price is between 100 and 200,
