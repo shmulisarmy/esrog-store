@@ -22,3 +22,7 @@ def test_api(request):
         assert esrog['texture_smoothness'] >= texture_smoothness
         assert esrog['ripeness_score'] >= ripeness_score
         assert esrog['size'] >= size
+
+
+if __name__ == '__main__':
+    print("running tests...")
