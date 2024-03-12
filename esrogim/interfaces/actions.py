@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from ..db_management.models import Esrog
+from ..models import Esrog
 
 def reserve(request):
     if request.method != 'POST':
