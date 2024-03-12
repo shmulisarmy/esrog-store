@@ -13,3 +13,6 @@ After running the script, open [localhost:8000](http://localhost:8000) in your w
 ## progress tracking
 
 [trello board](https://trello.com/b/LZW2xqsg/website)
+
+## run tests
+python3 esrogim/tests.py
