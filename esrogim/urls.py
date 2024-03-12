@@ -1,5 +1,8 @@
 from django.urls import path
-from . import apis, views, actions
+
+from . import views
+
+from .interfaces import actions, apis
 from django.conf.urls.static import static
 from django.conf import settings
 
