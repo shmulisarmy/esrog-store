@@ -6,20 +6,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>esrogim</title>
-    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
       <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
       <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-      <script type="text/babel" src="static/react/main.jsx" defer></script>
+      <script type="text/babel" src="{% static 'react/main.jsx' %}" defer></script>
+      <link rel="icon" href="data:image/jpeg;base64,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" type="image/x-icon">
 </head>
 <body>
-<!-- 
-    <nav>
-        <p>home</p>
-        <p>admin login</p>
-        <p>contact us</p>
-    </nav> -->
+    <div id="video_player">
+        <h1>click on a esrog to preview it</h1>
+    </div>
 
+    {% csrf_token %}
+    <form id="search_form">
+        <label for="ripeness_score">ripeness_score</label>
+        <input type="range" id="ripeness_score" name="ripeness_score" min="0" max="10" value="0">
+        <br>
+        <label for="size">size</label>
+        <input type="range" id="size" name="size" min="0" max="10" value="0">
+        <br>
+        <label for="texture_smoothness">texture_smoothness</label>
+        <input type="range" id="texture_smoothness" name="texture_smoothness" min="0" max="10" value="0">
+        <br>
+        <label for="min_price">min price</label>
+        <input type="number" id="min_price" placeholder="100"/>
+        <br>
+        <label for="max_price">max price</label>
+        <input type="number" id="max_price" placeholder="200"/>
+        <br>
+        <button type="button" onclick="event.preventDefault(); load_data()">search</button>
+    </form>
 
     <div id="root"></div>
 

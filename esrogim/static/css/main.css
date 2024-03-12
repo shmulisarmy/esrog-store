@@ -1,7 +1,8 @@
 body{
-    background-color: rgb(186, 182, 182);
-    background-color: purple;
-
+    background-color: rgb(243, 243, 147);
+    /* color: rgb(119, 237, 119); */
+    text-align: center;
+    align-items: center;
 }
 
 nav{
@@ -14,31 +15,41 @@ nav p{
     cursor: pointer;
 }
 
+#video_player source{
+    align-items: center; /* Vertical centering */
+}
+
 main{
     margin: 15%;
+    margin-top: 0%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Using repeat() for shorthand */
     grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr); /* Using repeat() for shorthand */
+
 }
-@media screen and (max-width: 700px) {
+
+
+@media screen and (min-width: 800px) {
     main{
-        grid-template-columns: repeat(2, 1fr); /* Using repeat() for shorthand */
+        grid-template-columns: repeat(4, 1fr); 
     }
     
 }
-@media screen and (max-width: 400px) {
+
+@media screen and (min-width: 600px) {
     main{
-        grid-template-columns: repeat(1, 1fr); /* Using repeat() for shorthand */
+        grid-template-columns: repeat(3, 1fr); /* Using repeat() for shorthand */
     }
     
 }
+
 .esrog{
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 3px 3px 3px ;
     padding: 10%;
     font-size: xx-small;
-    background: linear-gradient(90deg, rgba(247, 183, 63, 0.921), rgba(121, 207, 121, 0.457));
+    background-color: rgb(234, 209, 209);
 
 }
 .esrog img:hover{
@@ -54,13 +65,39 @@ main{
     width: 100%;
     height: 60%;
 }
-.text{
-    display: flex;
-    justify-content: space-evenly;
-    opacity: 0;
-    transition: 1s;
+
+#search_form{
+    border-radius: 10px;
+    margin-bottom: 5%;
+    background-color: rgba(100, 169, 100, 0.836);
+    border-radius: 10px;
+    margin-right: 30%;
+    margin-left: 30%;
 }
 
-.text:hover{
-    opacity: 1;
+#search_form button{
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(0, 255, 0);
 }
+
+#search_form input{
+    border-radius: 10px;
+}
+
+
+#video_player{
+    background-color: black;
+    color: white;
+    margin: 5%;
+    height: 300px;
+    width: 40%;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+}
+

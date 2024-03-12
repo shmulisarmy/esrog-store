@@ -7,8 +7,9 @@ class Esrog(models.Model):
     texture_smoothness = models.IntegerField(default=0)
     ripeness_score = models.IntegerField(default=0)
     image_url = models.URLField(max_length=500, default="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAd1g0lcUsdJbWuqcmOp6G8hD4A92kszSVeLFP476S_baPJWzFDSwxAbjDvHhcZ6LQ998&usqp=CAU")
-    profile_picture = models.ImageField(upload_to='static/images', blank=True, null=True)
+    video_url = models.URLField(max_length=500, default="https://www.youtube.com/embed/t10Ajcd_G-w")
     estimated_price = models.IntegerField(default=0)
+    reserved = models.CharField(max_length=100, default='')
 
     def calculate_price(self):
         size_weight = 0.1

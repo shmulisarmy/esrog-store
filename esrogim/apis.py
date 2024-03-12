@@ -12,6 +12,10 @@ def main(request):
 def price_filter(request, min_price, max_price):
     # if request.method != 'POST':
     #     return JsonResponse({"error": "POST request required."}, status=400)
-    sorted_esrogim_desc = list(Esrog.objects.filter(estimated_price__gt=min_price, estimated_price__lt=max_price).order_by('-estimated_price').values())
+    texture_smoothness = request.GET.get('texture_smoothness', 0)
+    ripeness_score = request.GET.get('ripeness_score', 0)
+    size = request.GET.get('size', 0)
+
+    sorted_esrogim_desc = list(Esrog.objects.filter(size__gte=size, estimated_price__gte=min_price, estimated_price__lt=max_price, ripeness_score__gte=ripeness_score, texture_smoothness__gte=texture_smoothness).order_by('-estimated_price').values())
 
     return JsonResponse(sorted_esrogim_desc, safe=False)

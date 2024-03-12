@@ -1,5 +1,5 @@
 from django.urls import path
-from . import apis, views
+from . import apis, views, actions
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -9,6 +9,11 @@ urlpatterns = [
     path('price_filter/<int:min_price>/<int:max_price>', apis.price_filter),
 
     path('', views.main),
+
+
+    #posts
+    path('reserve', actions.reserve),
+
 
 
 
