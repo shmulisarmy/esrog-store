@@ -10,12 +10,12 @@ function Esrog({ id, estimated_price, image_url, video_url, reserved }) {
       />
       <div className="text">
         <h1>Esrog #{id}</h1>
-        <h1>estimated price: {`$${estimated_price}`}</h1>
+        <h2>estimated price: {`$${estimated_price}`}</h2>
         {reserved ? (
-          <h1>
-            this is item is reserved but may be available tomorrow if not bought
+          <p>
+            this is item is reserved, however it may by available tomorrow if not bought
             be then
-          </h1>
+          </p>
         ) : <button onClick={() => { reserve(id) }}>reserve</button>}
       </div>
     </div>

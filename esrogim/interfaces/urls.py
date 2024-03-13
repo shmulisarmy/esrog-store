@@ -1,8 +1,6 @@
 from django.urls import path
 
-from . import views
-
-from . import actions, apis
+from . import actions, apis, views
 from django.conf.urls.static import static
 from django.conf import settings
 
