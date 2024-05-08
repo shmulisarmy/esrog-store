@@ -3,4 +3,4 @@
 
 ## features 
 - [x] search by size
--[] search by price
+- [] search by price
