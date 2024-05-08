@@ -2,5 +2,5 @@
 
 
 ## features 
--[x] search by size
+- [x] search by size
 -[] search by price
