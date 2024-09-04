@@ -1,1 +1,9 @@
 unable to open database file
+no such table: esrogim
+no such table: esrogim
+no such table: esrogim
+no such table: esrogim
+no such table: esrogim
+no such table: esrogim
+no such table: esrogim
+no such table: esrogim

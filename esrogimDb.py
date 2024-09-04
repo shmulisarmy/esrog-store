@@ -26,7 +26,7 @@ class EsrogimDB:
         conn = self._connect()
         cursor = conn.cursor()
         sql = '''CREATE TABLE IF NOT EXISTS esrogim
-                 (id INTEGER PRIMARY KEY, size INTEGER, clenleaness INTEGER, chabad INTEGER, reservedBy INTEGER, sold boolean DEFAULT false)'''
+                 (id INTEGER PRIMARY KEY, size INTEGER, clenleaness INTEGER, chabad INTEGER, reservedBy text DEFAULT __not_reserved__, sold boolean DEFAULT false)'''
         cursor.execute(sql)
         conn.commit()
         cursor.close()
@@ -135,6 +135,11 @@ class EsrogimDB:
         cursor.close()
         conn.close()
         return results
+    
+    def create_mock_data(self):
+        for i in range(100):
+            self.insert_esrog(i, i, i)
+
 
 
 
