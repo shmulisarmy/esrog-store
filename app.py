@@ -4,9 +4,10 @@ from esrogimDb import EsrogimDB
 app = Flask(__name__)
 
 
-path = "/home/kellersEsrogim/esrog_store"
 
-db = EsrogimDB(f"{path}/db")
+db = EsrogimDB(f"esrogim.db")
+db.create_table()
+db.create_mock_data()
 
 
 def log(message):
@@ -15,11 +16,7 @@ def log(message):
 
 @app.route("/")
 def root():
-    try:
-        return render_template("index.html", request=request, esrogim=db.get_all_available_esrogim())
-    except Exception as e:
-        log(e)
-        return "there is an error, check logs"
+    return render_template("index.html", request=request, esrogim=db.get_all_available_esrogim())
 
 @app.route("/initiate-reservation/<int:esrog_id>", methods=["GET"])
 def initiate_reservation(esrog_id: int):
