@@ -3,7 +3,7 @@ from esrogimDb import EsrogimDB
 
 app = Flask(__name__)
 
-db = EsrogimDB("db")
+db = EsrogimDB("./db")
 
 @app.route("/")
 def root():
