@@ -18,11 +18,11 @@ db = EsrogimDB("db")
 
 
 @app.get("/")
-def root(request: Request):
+async def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "esrogim": db.get_all_available_esrogim()})
 
 @app.get("/initiate-reservation/{esrog_id}")
-def initiate_reservation(request: Request, esrog_id: int):
+async def initiate_reservation(request: Request, esrog_id: int):
     result: tuple[str] = db.check_reserved(esrog_id)
     is_reserved = result[0]
     if is_reserved != '__not_reserved__':
@@ -32,7 +32,7 @@ def initiate_reservation(request: Request, esrog_id: int):
 
 
 @app.put("/reserve/{esrog_id}/{username}")
-def reserve(request: Request, esrog_id: int, username: str):
+async def reserve(request: Request, esrog_id: int, username: str):
     if db.reserve_esrog(esrog_id, username):
         return {"message": "this esrog is now reserved for you until the end of the day, please come by the store to pick it up"}
     
