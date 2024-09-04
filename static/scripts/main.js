@@ -13,10 +13,7 @@ function initiate_reservation(esrog_id){
                 alert(data.message)
             })
         }else{
-            const notifications = document.querySelector('.notifications')
-            const notification = document.createElement('p')
-            notification.innerHTML = data.message
-            notifications.appendChild(notification)
+            notify(data.message)
         }
     })
 }

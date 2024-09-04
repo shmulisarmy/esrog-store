@@ -1,29 +1,16 @@
-from fastapi import FastAPI, Request
-from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
-from uvicorn import Config, Server
-
+from flask import Flask, render_template, request, redirect
 from esrogimDb import EsrogimDB
 
-
-
-
-app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-templates = Jinja2Templates(directory="templates")
+app = Flask(__name__)
 
 db = EsrogimDB("db")
 
+@app.route("/")
+def root():
+    return render_template("index.html", request=request, esrogim=db.get_all_available_esrogim())
 
-
-
-@app.get("/")
-async def root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "esrogim": db.get_all_available_esrogim()})
-
-@app.get("/initiate-reservation/{esrog_id}")
-async def initiate_reservation(request: Request, esrog_id: int):
+@app.route("/initiate-reservation/<int:esrog_id>", methods=["GET"])
+def initiate_reservation(esrog_id: int):
     result: tuple[str] = db.check_reserved(esrog_id)
     is_reserved = result[0]
     if is_reserved != '__not_reserved__':
@@ -31,15 +18,12 @@ async def initiate_reservation(request: Request, esrog_id: int):
     
     return {"message": "this esrog is not reserved yet please enter your name to reserve it"}
 
-
-@app.put("/reserve/{esrog_id}/{username}")
-async def reserve(request: Request, esrog_id: int, username: str):
+@app.route("/reserve/<int:esrog_id>/<username>", methods=["PUT"])
+def reserve(esrog_id: int, username: str):
     if db.reserve_esrog(esrog_id, username):
-        return {"message": "this esrog is now reserved for you until the end of the day, please come by the store to pick it up"}
+        return {"message": "This esrog is now reserved for you until the end of the day. Please come by the store to pick it up."}
     
-    return {"message": "reservation failed"}
+    return {"message": "Reservation failed"}
 
 if __name__ == "__main__":
-    config = Config("app:app", host="0.0.0.0", port=8000, log_level="info")
-    server = Server(config)
-    server.run()
+    app.run(debug=True)
