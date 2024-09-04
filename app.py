@@ -3,7 +3,10 @@ from esrogimDb import EsrogimDB
 
 app = Flask(__name__)
 
-db = EsrogimDB("./db")
+
+path = "/home/kellersEsrogim/esrog_store"
+
+db = EsrogimDB(f"{path}/db")
 
 
 def log(message):
