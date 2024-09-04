@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/main.css?v=1">
+    <link rel="icon" href="/static/images/esrogim-logo.png">
+    <script src="/static/scripts/main.js" defer></script>
+    <link rel="stylesheet" href="/static/styles/main.css">
+    <title>kellers esrogim</title>
+
+</head>
+<body>
+
+    <header></header>
+    <nav>
+        <div class="notifications">
+
+        </div>
+        <div class="links">
+            <a href="/">home</a>
+            <a href="/esrogim">esrogim</a>
+            <a href="/about">about</a>
+        </div>
+    </nav>
+
+
+    <main id="esrogim-container">
+
+        {% for esrog in esrogim %}
+            <div class="esrog">
+                <img src="/static/images/esrog-{{ esrog[0] }}.png" alt="">
+                <div class="text">
+                    <h2>size: {{ esrog[1] }}</h2>
+                    <p>cleanliness: {{ esrog[2] }}</p>
+                    <p>chabad:{{ esrog[3] }}</p>
+                </div>
+                <button class="reserve" onclick="initiate_reservation({{ esrog[0] }})">reserve</button>
+                </div>
+        {% endfor %}
+        </main>
+
+
+
+        <script>
+            </script>
+</body>
+</html>

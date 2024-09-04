@@ -1,0 +1,110 @@
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+#wellecome{
+    animation: appear 1s;
+}
+
+
+header{
+    margin: 0%;
+    background: url("/static/images/esrogim-logo.png") no-repeat;
+    background-size: cover; /* Scales the image to cover the entire header area */
+    background-color: #f0f0f0; /* Light grey color as a fallback */
+    width: 100%; /* Full width */
+    height: calc(20vw + 120px); /* Example height, adjust as needed */
+
+}
+nav{
+    position: sticky;
+    top: 0%;
+
+
+    .notifications{
+        color: black;
+        
+        
+        p{
+            background-color: orange;
+            animation: appear 1s;
+            padding: 10px;
+            margin: 0%;
+
+            button.close{
+                color: red;
+                background-color: white;
+                float: left;
+                margin-right: 5px;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+    }
+    .links{
+
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.863);
+        display: flex;
+        justify-content: space-around;
+        
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: large;
+            
+            &:hover{
+                color: lightgreen;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+main#esrogim-container{
+    margin: 4%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px
+}
+.esrog{
+    box-shadow: 0 0 5px rgb(79, 173, 79);
+    background-color: rgba(233, 233, 140, 0.086);
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    img{
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .text{
+
+        padding: 10px;
+        margin: 10px;
+    }
+
+
+    button.reserve{
+        background-color: rgb(79, 173, 79);
+        padding: 4px;
+        border-radius: 4px;
+        color: white;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(48, 155, 48);
+        }
+        &:active{
+            transform: scale(0.9);
+        }
+    }
+}
