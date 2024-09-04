@@ -6,6 +6,7 @@ function initiate_reservation(esrog_id){
         console.log(data)
         if(data.message == 'this esrog is not reserved yet please enter your name to reserve it'){
             const username = prompt('enter your name in order to reserve this esrog')
+            if (!username) return;
             localStorage.setItem('username', username)
             fetch(`/reserve/${esrog_id}/${username}`, {method: 'PUT'})
             .then(response => response.json())
