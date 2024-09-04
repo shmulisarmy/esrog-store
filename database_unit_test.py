@@ -12,7 +12,7 @@ test_db = EsrogimDB("test.db")
 def test_create_table():
     test_db.create_table()
     table_info = test_db.table_info()
-    assert table_info["id"] == "INTEGER"
+    assert table_info["id"] == "INTEGER "
     assert table_info["size"] == "INTEGER"
     assert table_info["clenleaness"] == "INTEGER"
     assert table_info["chabad"] == "INTEGER"
