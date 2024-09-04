@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from uvicorn import Config, Server
 
 from esrogimDb import EsrogimDB
 
@@ -38,3 +39,7 @@ async def reserve(request: Request, esrog_id: int, username: str):
     
     return {"message": "reservation failed"}
 
+if __name__ == "__main__":
+    config = Config("app:app", host="0.0.0.0", port=8000, log_level="info")
+    server = Server(config)
+    server.run()
