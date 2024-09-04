@@ -5,9 +5,18 @@ app = Flask(__name__)
 
 db = EsrogimDB("./db")
 
+
+def log(message):
+    with open("log.txt", "a") as f:
+        f.write(f"{message}\n")
+
 @app.route("/")
 def root():
-    return render_template("index.html", request=request, esrogim=db.get_all_available_esrogim())
+    try:
+        return render_template("index.html", request=request, esrogim=db.get_all_available_esrogim())
+    except Exception as e:
+        log(e)
+        return "there is an error, check logs"
 
 @app.route("/initiate-reservation/<int:esrog_id>", methods=["GET"])
 def initiate_reservation(esrog_id: int):
