@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 db = EsrogimDB(f"esrogim.db")
 db.create_table()
-db.create_mock_data()
 
 
 def log(message):
