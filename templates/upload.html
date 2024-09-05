@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kellers erogim/upload page</title>
     <link rel="icon" href="/static/images/esrogim-logo.png">
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="size"></label>
+        <input type="number" name="size">
+
+        <label for="chabad"></label>
+        <input type="number" name="chabad">
+        
+        <label for="esrog-image"></label>
+        <input type="file" accept="image/*" capture="camera"  name="esrog-image">
+
+        <button type="submit">upload</button>
+    </form>
 </body>
 </html>
