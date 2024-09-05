@@ -7,3 +7,5 @@ no such table: esrogim
 no such table: esrogim
 no such table: esrogim
 no such table: esrogim
+size = '4', clenleaness = '6', chabad = '5'
+size = '5', clenleaness = '6', chabad = '53'

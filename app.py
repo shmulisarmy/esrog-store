@@ -42,7 +42,7 @@ def upload():
         size = request.form["size"]
         clenleaness = request.form["clenleaness"]
         chabad = request.form["chabad"]
-        log(f"{size = }, {clenleaness = }, {chabad = }")
+        log(f"size = {size}, clenleaness = {clenleaness}, chabad = {chabad}")
         return redirect("/")
 
 if __name__ == "__main__":
