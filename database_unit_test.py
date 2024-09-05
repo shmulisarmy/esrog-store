@@ -16,7 +16,7 @@ def test_create_table():
     assert table_info["size"] == "INTEGER"
     assert table_info["clenleaness"] == "INTEGER"
     assert table_info["chabad"] == "INTEGER"
-    assert table_info["reservedBy"] == "INTEGER"
+    assert table_info["reservedBy"] == "TEXT"
     assert table_info["sold"] == "boolean"
 
 
@@ -24,13 +24,13 @@ def test_create_table():
 def test_insert_esrog():
     row_id = test_db.insert_esrog(2, 3, 4)
     result = test_db.get_esrog_by_id(row_id)
-    assert result == (row_id, 2, 3, 4, None)
+    assert result == (row_id, 2, 3, 4, "__not_reserved__")
 
 
 def test_update_esrog():
     test_db.update_esrog(1, 2, 3, 4)
     result = test_db.get_esrog_by_id(1)
-    assert result == (1, 2, 3, 4, None)
+    assert result == (1, 2, 3, 4, "__not_reserved__")
 
 
 print(test_db.table_info())
