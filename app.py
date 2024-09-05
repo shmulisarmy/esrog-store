@@ -39,11 +39,10 @@ def upload():
     if request.method == "GET":
         return render_template("upload.html", request=request)
     if request.method == "POST":
-        esrog_id = request.form["esrog-id"]
         size = request.form["size"]
         clenleaness = request.form["clenleaness"]
         chabad = request.form["chabad"]
-        log(f"{esrog_id = }, {size = }, {clenleaness = }, {chabad = }")
+        log(f"{size = }, {clenleaness = }, {chabad = }")
         return redirect("/")
 
 if __name__ == "__main__":
